@@ -1,6 +1,6 @@
 export const relations = [
-  "Mom",
-  "Dad",
+  "Mother",
+  "Father",
   "Son",
   "Daughter",
   "Younger Brother",
@@ -39,21 +39,67 @@ export const getChineseRelation = (input) => {
     case "Younger Sister":
       relation = "妹妹";
       break;
-    case "Dad's Older Brother":
+    // Dad's side
+    case "Father's Father":
+      relation = "爺爺";
+      break;
+    case "Father's Mother":
+      relation = "嫲嫲 / 奶奶";
+      break;
+    case "Father's Older Brother":
       relation = "伯伯";
       break;
-    case "Dad's Older Brother's Wife":
+    case "Father's Older Brother's Wife":
       relation = "伯母";
       break;
-    case "Dad's Younger Brother":
+    case "Father's Younger Brother":
       relation = "叔叔";
       break;
-    case "Dad's Younger Brother's Wife":
-      relation = "嬸";
+    case "Father's Younger Brother's Wife":
+      relation = "嬸嬸";
       break;
+    case "Father's Older Sister":
+      relation = "姑妈";
+      break;
+    case "Father's Older Sister's Husband":
+    case "Father's Younger Sister's Husband":
+      relation = "姑夫";
+      break;
+    case "Father's Younger Sister":
+      relation = "姑姐 / 姑姑";
+      break;
+    // Mom's side
+    case "Mother's Father":
+      relation = "公公";
+      break;
+    case "Mother's Mother":
+      relation = "婆婆";
+      break;
+    case "Mother's Older Brother":
+    case "Mother's Younger Brother":
+      relation = "舅夫";
+      break;
+    case "Mother's Older Brother's Wife":
+      relation = "舅母";
+      break;
+    case "Mother's Younger Brother's Wife":
+      relation = "嬸嬸";
+      break;
+    case "Mother's Older Sister":
+      relation = "姑妈";
+      break;
+    case "Mother's Older Sister's Husband":
+    case "Mother's Younger Sister's Husband":
+      relation = "姑夫";
+      break;
+    case "Mother's Younger Sister":
+      relation = "姑姐 / 姑姑";
+      break;
+    // Error and Empty state
     case "":
       relation = "Please select relations";
       break;
+
     default:
       relation = "Error";
       break;
