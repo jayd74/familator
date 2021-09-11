@@ -1,36 +1,41 @@
 import React, { useEffect, useState } from "react";
 import Button from "../Button";
-import relations from "./relations";
+import { relations, getChineseRelation } from "./relations";
 const Familator = () => {
   const [relationship, setRelationship] = useState([]);
-  const [relCopy, setRelCopy] = useState([]);
+  const [input, setInput] = useState("");
+
+  useEffect(() => {
+    getRelationInput();
+  });
+
   const setRelation = (rel) => {
     setRelationship(relationship.concat(rel));
   };
-
-  useEffect(() => {
-    getRelationText();
-  });
-
-  const getRelationText = () => {
-    let text = "";
+  const getRelationInput = () => {
+    let myRelation = "";
     relationship.forEach((rel, index) => {
-      if (index === relationship.length - 1) {
-        text = text + rel + " ";
+      if (rel === "clear") {
+        myRelation = "";
+      } else if (index === relationship.length - 1) {
+        myRelation = `${myRelation} ${rel}`;
       } else {
-        text = text + rel + "'s ";
+        myRelation = `${myRelation} ${rel}'s`;
       }
     });
 
-    setRelCopy(text && `My ${text}`);
+    setInput(myRelation);
   };
+
   return (
     <>
       <h1>Familator</h1>
-      <p>{relCopy}</p>
+      <p>Input: {input && `My ${input}`}</p>
+      <p>Relation: {getChineseRelation(input)}</p>
       {relations.map((relation) => (
         <Button key={relation} copy={relation} setRelation={setRelation} />
       ))}
+      <Button key="clear" copy="clear" setRelation={setRelation} />
     </>
   );
 };

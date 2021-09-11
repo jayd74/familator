@@ -1,6 +1,6 @@
 import React from "react";
 
-const Button = ({ copy, setRelation }) => {
+const Button = ({ copy, value, setRelation }) => {
   const handleClick = (relation) => {
     setRelation(relation);
   };
