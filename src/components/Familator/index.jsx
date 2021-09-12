@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Button from "../Button";
-import { relations, getChineseRelation } from "./relations";
+import { relations, getChineseName } from "./relations";
 const Familator = ({ className }) => {
   const [relationship, setRelationship] = useState([]);
   const [input, setInput] = useState("");
@@ -27,14 +27,13 @@ const Familator = ({ className }) => {
 
     setInput(myRelation);
   };
-
   return (
     <div className={className}>
       <h1>Familator</h1>
       <InputArea>
         Input <span>{input && `My ${input}`}</span>
       </InputArea>
-      <RelationOutput>{getChineseRelation(input)}</RelationOutput>
+      <RelationOutput>{getChineseName(input)}</RelationOutput>
       <CTAContainer>
         {relations.map((relation) => (
           <Button key={relation} copy={relation} setRelation={setRelation} />
