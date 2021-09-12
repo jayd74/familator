@@ -39,6 +39,12 @@ export const getChineseRelation = (input) => {
     case "Younger Sister":
       relation = "妹妹";
       break;
+    case "Wife":
+      relation = "老婆 / 妻子";
+      break;
+    case "Husband":
+      relation = "老公 / 丈夫";
+      break;
     // Dad's side
     case "Father's Father":
       relation = "爺爺";
@@ -59,7 +65,7 @@ export const getChineseRelation = (input) => {
       relation = "嬸嬸";
       break;
     case "Father's Older Sister":
-      relation = "姑妈";
+      relation = "姑媽";
       break;
     case "Father's Older Sister's Husband":
     case "Father's Younger Sister's Husband":
@@ -70,7 +76,7 @@ export const getChineseRelation = (input) => {
       break;
     // Mom's side
     case "Mother's Father":
-      relation = "公公";
+      relation = "公公 / 外公";
       break;
     case "Mother's Mother":
       relation = "婆婆";
@@ -85,23 +91,68 @@ export const getChineseRelation = (input) => {
     case "Mother's Younger Brother's Wife":
       relation = "嬸嬸";
       break;
-    case "Mother's Older Sister":
-      relation = "姑妈";
-      break;
     case "Mother's Older Sister's Husband":
     case "Mother's Younger Sister's Husband":
       relation = "姑夫";
       break;
-    case "Mother's Younger Sister":
-      relation = "姑姐 / 姑姑";
+    case "Mother's Older Sister":
+      relation = "姨妈";
       break;
+    case "Mother's Younger Sister":
+      relation = "阿姨";
+      break;
+    // Cousins
+    case "Father's Older Brother's Son":
+    case "Father's Younger Brother's Son":
+    case "Father's Older Sister's Son":
+    case "Father's Younger Sister's Son":
+      relation = "堂兄 / 堂弟";
+      break;
+    case "Father's Older Brother's Daughter":
+    case "Father's Younger Brother's Daughter":
+    case "Father's Older Sister's Daughter":
+    case "Father's Younger Sister's Daughter":
+      relation = "堂姐 / 堂妹";
+      break;
+    case "Mother's Older Brother's Son":
+    case "Mother's Younger Brother's Son":
+    case "Mother's Older Sister's Son":
+    case "Mother's Younger Sister's Son":
+      relation = "表哥 / 表弟";
+      break;
+    case "Mother's Older Brother's Daughter":
+    case "Mother's Younger Brother's Daughter":
+    case "Mother's Older Sister's Daughter":
+    case "Mother's Younger Sister's Daughter":
+      relation = "表姐 / 表妹";
+      break;
+    // Spouse's side
+    case "Wife's Father":
+      relation = "外父 / 岳父";
+      break;
+    case "Wife's Mother":
+      relation = "外母 / 岳母";
+      break;
+    case "Husband's Father":
+      relation = "老爺 / 岳父";
+      break;
+    case "Husband's Mother":
+      relation = "奶奶 / 岳母";
+      break;
+    case "Husband's Old Sister":
+      relation = "大姑";
+      break;
+    case "Husband's Young Sister":
+      relation = "小姑";
+      break;
+    // Cousins
+
     // Error and Empty state
     case "":
       relation = "Please select relations";
       break;
-
     default:
-      relation = "Error";
+      relation = "Error. Clear and Try again";
       break;
   }
   return relation;
