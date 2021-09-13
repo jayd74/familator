@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Button from "../Button";
-import { relations, getChineseName } from "./relations";
+import { relations } from "./relations";
+import { familyMemberList } from "./family-member-list";
 const Familator = ({ className }) => {
   const [relationship, setRelationship] = useState([]);
   const [input, setInput] = useState("");
@@ -25,8 +26,14 @@ const Familator = ({ className }) => {
       }
     });
 
-    setInput(myRelation);
+    setInput(myRelation.trimStart());
   };
+
+  const getChineseName = (input) => {
+    let fam = familyMemberList.find((member) => member.relationship === input);
+    return fam ? fam?.title : "Error: Clear and try again";
+  };
+
   return (
     <div className={className}>
       <h1>Familator</h1>
