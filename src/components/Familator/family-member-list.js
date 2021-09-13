@@ -15,12 +15,12 @@ export const familyMemberList = [
   },
   {
     relationship: "Father",
-    title: "父親",
+    title: "父親 / 爸爸",
     engTitle: "Father",
   },
   {
     relationship: "Mother",
-    title: "母親",
+    title: "母親 / 媽媽",
     engTitle: "Mother",
   },
   {
@@ -591,47 +591,7 @@ export const familyMemberList = [
     title: "太姥姥",
     engTitle: "Maternal Great-Grandmother",
   },
-  // Your children
-  {
-    relationship: "Son's Older Sister",
-    title: "女兒",
-    engTitle: "Daughter",
-  },
-  {
-    relationship: "Son's Younger Sister",
-    title: "女兒",
-    engTitle: "Daughter",
-  },
-  {
-    relationship: "Daughter's Older Sister",
-    title: "女兒",
-    engTitle: "Daughter",
-  },
-  {
-    relationship: "Daughter's Younger Sister",
-    title: "女兒",
-    engTitle: "Daughter",
-  },
-  {
-    relationship: "Son's Older Brother",
-    title: "兒子",
-    engTitle: "Son",
-  },
-  {
-    relationship: "Son's Younger Brother",
-    title: "兒子",
-    engTitle: "Son",
-  },
-  {
-    relationship: "Daughter's Older Brother",
-    title: "兒子",
-    engTitle: "Son",
-  },
-  {
-    relationship: "Daughter's Younger Brother",
-    title: "兒子",
-    engTitle: "Son",
-  },
+
   // Your Grandchildren
   {
     relationship: "Son's Son",
@@ -693,5 +653,67 @@ export const familyMemberList = [
     relationship: "Daughter's Daughter's Daughter",
     title: "曾孙女",
     engTitle: "Great-Granddaughter",
+  },
+  // Your Parents
+  {
+    relationship: "Older Sister's Father",
+    title: "父親 / 爸爸",
+    engTitle: "Father",
+  },
+  {
+    relationship: "Younger Sister's Father",
+    title: "父親 / 爸爸",
+    engTitle: "Father",
+  },
+  {
+    relationship: "Older Brother's Father",
+    title: "父親 / 爸爸",
+    engTitle: "Father",
+  },
+  {
+    relationship: "Younger Brother's Father",
+    title: "父親 / 爸爸",
+    engTitle: "Father",
+  },
+  {
+    relationship: "Older Sister's Mother",
+    title: "母親 / 媽媽",
+    engTitle: "Mother",
+  },
+  {
+    relationship: "Younger Sister's Mother",
+    title: "母親 / 媽媽",
+    engTitle: "Mother",
+  },
+  {
+    relationship: "Older Brother's Mother",
+    title: "母親 / 媽媽",
+    engTitle: "Mother",
+  },
+  {
+    relationship: "Younger Brother's Mother",
+    title: "母親 / 媽媽",
+    engTitle: "Mother",
+  },
+  // You, dummy.
+  {
+    relationship: "Son's Father",
+    title: "你 或者 丈夫/老公",
+    engTitle: "You or your husband",
+  },
+  {
+    relationship: "Daughter's Father",
+    title: "你 或者 丈夫/老公",
+    engTitle: "You or your husband",
+  },
+  {
+    relationship: "Son's Mother",
+    title: "你 或者 妻子/老婆",
+    engTitle: "You or your wife",
+  },
+  {
+    relationship: "Daughter's Mother",
+    title: "你 或者 妻子/老婆",
+    engTitle: "You or your wife",
   },
 ];
