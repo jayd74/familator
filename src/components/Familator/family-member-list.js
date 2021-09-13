@@ -399,7 +399,7 @@ export const familyMemberList = [
     title: "外甥女",
     engTitle: "Niece",
   },
-  // Grandparents relatives
+  // Grandparents siblings
   {
     relationship: "Father's Father's Older Sister",
     title: "姑奶奶",
@@ -715,5 +715,46 @@ export const familyMemberList = [
     relationship: "Daughter's Mother",
     title: "你 或者 妻子/老婆",
     engTitle: "You or your wife",
+  },
+  // First cousins
+  {
+    relationship: "Father's Father's Older Brother's Son",
+    title: "",
+    engTitle: "First cousin once removed",
+  },
+  {
+    relationship: "Father's Father's Younger Brother's Son",
+    title: "",
+    engTitle: "First cousin once removed",
+  },
+  {
+    relationship: "Father's Father's Older Brother's Daughter",
+    title: "",
+    engTitle: "First cousin once removed",
+  },
+  {
+    relationship: "Father's Father's Younger Brother's Daughter",
+    title: "",
+    engTitle: "First cousin once removed",
+  },
+  {
+    relationship: "Father's Father's Older Sister's Son",
+    title: "",
+    engTitle: "First cousin once removed",
+  },
+  {
+    relationship: "Father's Father's Younger Sister's Son",
+    title: "",
+    engTitle: "First cousin once removed",
+  },
+  {
+    relationship: "Father's Father's Older Sister's Daughter",
+    title: "",
+    engTitle: "First cousin once removed",
+  },
+  {
+    relationship: "Father's Father's Younger Sister's Daughter",
+    title: "",
+    engTitle: "First cousin once removed",
   },
 ];
