@@ -4,9 +4,9 @@ export const relations = [
   "Son",
   "Daughter",
   "Younger Brother",
+  "Older Brother",
   "Younger Sister",
   "Older Sister",
-  "Older Brother",
   "Wife",
   "Husband",
 ];
