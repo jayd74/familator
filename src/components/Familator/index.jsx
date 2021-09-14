@@ -49,7 +49,7 @@ const Familator = ({ className }) => {
       <h1>Familator</h1>
       <InputArea>
         Input <span>{input && `My ${input}`}</span>
-        <button onClick={() => handleBackButton()}>Back</button>
+        <button onClick={handleBackButton}>Back</button>
       </InputArea>
       <RelationOutput>
         {familyMember?.title || "No Relative Found. Clear and try again."}
