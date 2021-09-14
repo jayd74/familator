@@ -78,19 +78,34 @@ const InputArea = styled.p`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 60px;
+  align-items: center;
+  min-height: 120px;
 
   span {
     color: black;
+    padding: 10px;
+  }
+
+  button {
+    width: max-content;
+    background: red;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border-style: none;
+
+    &:hover {
+      background-color: darkred;
+    }
   }
 `;
 
 const ClearBtn = styled(Button)`
-  background: lightblue;
+  background: blue;
   color: white;
 
   &:hover {
-    background: blue;
+    background: darkblue;
     cursor: pointer;
   }
 `;
