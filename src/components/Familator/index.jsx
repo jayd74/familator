@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
+import dropRight from "lodash/dropRight";
+
 import Button from "../Button";
 import { relations } from "./relations";
 import { familyMemberList } from "./family-member-list";
+
 const Familator = ({ className }) => {
   const [relationship, setRelationship] = useState([]);
   const [input, setInput] = useState("");
@@ -14,6 +17,10 @@ const Familator = ({ className }) => {
 
   const setRelation = (rel) => {
     setRelationship(relationship.concat(rel));
+  };
+
+  const handleBackButton = () => {
+    setRelationship(dropRight(relationship, 1));
   };
 
   const getRelative = (input) => {
@@ -42,6 +49,7 @@ const Familator = ({ className }) => {
       <h1>Familator</h1>
       <InputArea>
         Input <span>{input && `My ${input}`}</span>
+        <button onClick={() => handleBackButton()}>Back</button>
       </InputArea>
       <RelationOutput>
         {familyMember?.title || "No Relative Found. Clear and try again."}
