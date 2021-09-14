@@ -6,6 +6,7 @@ import { familyMemberList } from "./family-member-list";
 const Familator = ({ className }) => {
   const [relationship, setRelationship] = useState([]);
   const [input, setInput] = useState("");
+  const [familyMember, setFamilyMember] = useState({});
 
   useEffect(() => {
     getRelationInput();
@@ -14,6 +15,12 @@ const Familator = ({ className }) => {
   const setRelation = (rel) => {
     setRelationship(relationship.concat(rel));
   };
+
+  const getRelative = (input) => {
+    let fam = familyMemberList.find((member) => member.relationship === input);
+    return fam;
+  };
+
   const getRelationInput = () => {
     let myRelation = "";
     relationship.forEach((rel, index) => {
@@ -27,11 +34,7 @@ const Familator = ({ className }) => {
     });
 
     setInput(myRelation.trimStart());
-  };
-
-  const getChineseName = (input) => {
-    let fam = familyMemberList.find((member) => member.relationship === input);
-    return fam ? fam?.title : "Error: Clear and try again";
+    setFamilyMember(getRelative(myRelation.trimStart()));
   };
 
   return (
@@ -40,7 +43,10 @@ const Familator = ({ className }) => {
       <InputArea>
         Input <span>{input && `My ${input}`}</span>
       </InputArea>
-      <RelationOutput>{getChineseName(input)}</RelationOutput>
+      <RelationOutput>
+        {familyMember?.title || "No Relative Found. Clear and try again."}
+        {familyMember?.engTitle && <span>{familyMember?.engTitle}</span>}
+      </RelationOutput>
       <CTAContainer>
         {relations.map((relation) => (
           <Button key={relation} copy={relation} setRelation={setRelation} />
@@ -63,6 +69,8 @@ const InputArea = styled.p`
   color: #70757a;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  height: 60px;
 
   span {
     color: black;
@@ -84,6 +92,16 @@ const RelationOutput = styled.p`
   padding: 25px;
   font-size: 36px;
   font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100px;
+
+  span {
+    margin-top: 10px;
+    font-size: 24px;
+    color: grey;
+  }
 `;
 
 const CTAContainer = styled.div`
