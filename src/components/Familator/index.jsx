@@ -24,8 +24,8 @@ const Familator = ({ className }) => {
   };
 
   const getRelative = (input) => {
-    let fam = familyMemberList.find((member) => member.relationship === input);
-    return fam;
+    let familyMember = familyMemberList.find((member) => member.relationship === input);
+    return familyMember;
   };
 
   const getRelationInput = () => {
