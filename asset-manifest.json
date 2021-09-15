@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/familator/static/css/main.106baaae.chunk.css",
-    "main.js": "/familator/static/js/main.9e0f9a95.chunk.js",
-    "main.js.map": "/familator/static/js/main.9e0f9a95.chunk.js.map",
+    "main.js": "/familator/static/js/main.df2af75e.chunk.js",
+    "main.js.map": "/familator/static/js/main.df2af75e.chunk.js.map",
     "runtime-main.js": "/familator/static/js/runtime-main.2ab69a5d.js",
     "runtime-main.js.map": "/familator/static/js/runtime-main.2ab69a5d.js.map",
-    "static/js/2.b6fc0905.chunk.js": "/familator/static/js/2.b6fc0905.chunk.js",
-    "static/js/2.b6fc0905.chunk.js.map": "/familator/static/js/2.b6fc0905.chunk.js.map",
+    "static/js/2.cd73e51f.chunk.js": "/familator/static/js/2.cd73e51f.chunk.js",
+    "static/js/2.cd73e51f.chunk.js.map": "/familator/static/js/2.cd73e51f.chunk.js.map",
     "static/js/3.cbae00aa.chunk.js": "/familator/static/js/3.cbae00aa.chunk.js",
     "static/js/3.cbae00aa.chunk.js.map": "/familator/static/js/3.cbae00aa.chunk.js.map",
     "index.html": "/familator/index.html",
     "static/css/main.106baaae.chunk.css.map": "/familator/static/css/main.106baaae.chunk.css.map",
-    "static/js/2.b6fc0905.chunk.js.LICENSE.txt": "/familator/static/js/2.b6fc0905.chunk.js.LICENSE.txt"
+    "static/js/2.cd73e51f.chunk.js.LICENSE.txt": "/familator/static/js/2.cd73e51f.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.2ab69a5d.js",
-    "static/js/2.b6fc0905.chunk.js",
+    "static/js/2.cd73e51f.chunk.js",
     "static/css/main.106baaae.chunk.css",
-    "static/js/main.9e0f9a95.chunk.js"
+    "static/js/main.df2af75e.chunk.js"
   ]
 }
