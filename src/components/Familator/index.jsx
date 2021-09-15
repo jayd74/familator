@@ -10,10 +10,13 @@ const Familator = ({ className }) => {
   const [relationship, setRelationship] = useState([]);
   const [input, setInput] = useState("");
   const [familyMember, setFamilyMember] = useState({});
-  const [gender, setGender] = useState("male");
+  const [gender, setGender] = useState("Male");
+  const [reverseRelation, setReverseRelation] = useState("");
+  const [showReverseRelation, toggleRevereRelation] = useState(false);
 
   useEffect(() => {
     getRelationInput();
+    getReverseRelation();
   });
 
   const setRelation = (rel) => {
@@ -27,6 +30,12 @@ const Familator = ({ className }) => {
   const getRelative = (input) => {
     let familyMember = familyMemberList.find((member) => member.relationship === input);
     return familyMember;
+  };
+
+  const getReverseRelation = () => {
+    const reverseKey = `reverse${gender}`;
+
+    setReverseRelation(familyMember?.[reverseKey]);
   };
 
   const getRelationInput = () => {
@@ -56,13 +65,22 @@ const Familator = ({ className }) => {
         {familyMember?.title || "No Relative Found. Clear and try again."}
         {familyMember?.engTitle && <span>{familyMember?.engTitle}</span>}
       </RelationOutput>
+
+      <ReverseRelationContainer>
+        {input && (
+          <ReverseButton onClick={() => toggleRevereRelation(!showReverseRelation)}>
+            {showReverseRelation ? "Hide" : "Show"} Reverse Relation
+          </ReverseButton>
+        )}
+        {showReverseRelation && reverseRelation}
+      </ReverseRelationContainer>
       <GenderToggleContainer>
         Your Gender:
         <div>
-          <GenderToggle active={gender === "male"} onClick={() => setGender("male")}>
+          <GenderToggle active={gender === "Male"} onClick={() => setGender("Male")}>
             Male
           </GenderToggle>
-          <GenderToggle active={gender === "female"} onClick={() => setGender("female")}>
+          <GenderToggle active={gender === "Female"} onClick={() => setGender("Female")}>
             Female
           </GenderToggle>
         </div>
@@ -130,6 +148,7 @@ const RelationOutput = styled.p`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   height: 100px;
 
   span {
@@ -164,4 +183,20 @@ const CTAContainer = styled.div`
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
+`;
+
+const ReverseRelationContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
+const ReverseButton = styled.button`
+  border: 1px solid grey;
+  border-radius: 5px;
+  background: lightgrey;
+  color: black;
+  padding: 10px;
+  font-size: 20px;
+  width: max-content;
 `;
