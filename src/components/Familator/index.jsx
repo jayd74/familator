@@ -10,6 +10,7 @@ const Familator = ({ className }) => {
   const [relationship, setRelationship] = useState([]);
   const [input, setInput] = useState("");
   const [familyMember, setFamilyMember] = useState({});
+  const [gender, setGender] = useState("male");
 
   useEffect(() => {
     getRelationInput();
@@ -55,6 +56,17 @@ const Familator = ({ className }) => {
         {familyMember?.title || "No Relative Found. Clear and try again."}
         {familyMember?.engTitle && <span>{familyMember?.engTitle}</span>}
       </RelationOutput>
+      <GenderToggleContainer>
+        Your Gender:
+        <div>
+          <GenderToggle active={gender === "male"} onClick={() => setGender("male")}>
+            Male
+          </GenderToggle>
+          <GenderToggle active={gender === "female"} onClick={() => setGender("female")}>
+            Female
+          </GenderToggle>
+        </div>
+      </GenderToggleContainer>
       <CTAContainer>
         {relations.map((relation) => (
           <Button key={relation} copy={relation} setRelation={setRelation} />
@@ -124,6 +136,27 @@ const RelationOutput = styled.p`
     margin-top: 10px;
     font-size: 24px;
     color: grey;
+  }
+`;
+
+const GenderToggleContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 25px;
+  align-items: center;
+`;
+
+const GenderToggle = styled.button`
+  cursor: pointer;
+  border: 1px solid grey;
+  border-radius: 5px;
+  padding: 15px;
+  background: ${(props) => (props.active ? "green" : "lightgrey")};
+  color: ${(props) => (props.active ? "white" : "grey")};
+  margin: 10px;
+
+  &:hover {
+    background: ${(props) => (props.active ? "green" : "darkgrey")};
   }
 `;
 
